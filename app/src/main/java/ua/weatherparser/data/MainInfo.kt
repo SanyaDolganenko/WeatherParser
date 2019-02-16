@@ -2,9 +2,9 @@ package ua.weatherparser.data
 
 
 data class MainInfo(
-    val temp: Int,
+    val temp: Float,
     val pressure: Int,
-    val humidity: Int,
-    val temp_min: Int,
-    val temp_max: Int
+    val humidity: Float,
+    val temp_min: Float,
+    val temp_max: Float
 )

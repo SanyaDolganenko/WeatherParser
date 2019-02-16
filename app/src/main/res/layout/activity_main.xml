@@ -1,36 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<android.support.v4.widget.SwipeRefreshLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    <LinearLayout
+        android:layout_height="match_parent"
+        android:id="@+id/swipe_refresh_layout">
+    <ScrollView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:padding="20dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            tools:context=".MainActivity">
-        <EditText
-                android:id="@+id/edit_text_city"
-                android:layout_width="215dp"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:text="city"
-                android:ems="10"
-        />
-        <Button
-                android:id="@+id/button_get_weather"
-                android:text="Get weather"
-                android:layout_width="wrap_content"
-                android:layout_marginBottom="40dp"
-                android:layout_height="wrap_content"
-        />
-
-        <TextView
-                android:id="@+id/text_view_output"
+            android:layout_height="match_parent">
+        <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:padding="20dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:context=".MainActivity">
+            <EditText
+                    android:id="@+id/edit_text_city"
+                    android:layout_width="215dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:text="city"
+                    android:ems="10"
+            />
+            <Button
+                    android:id="@+id/button_get_weather"
+                    android:text="Get weather"
+                    android:layout_width="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_height="wrap_content"
+            />
 
 
-    </LinearLayout>
-</ScrollView>
+            <android.support.v7.widget.CardView android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_margin="10dp"
+                                                android:id="@+id/card_view">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:padding="20dp">
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:id="@+id/text_view_city"
+                              tools:text="City"
+                              android:textStyle="bold"
+                              android:textSize="20dp"/>
+
+                    <LinearLayout android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:layout_marginBottom="4dp"
+                                  android:layout_marginTop="6dp"
+                                  android:orientation="horizontal">
+
+                        <ImageView android:layout_width="40dp" android:layout_height="40dp"
+
+                                   android:id="@+id/image_view_icon"
+                                   android:layout_marginEnd="5dp"
+                        />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:id="@+id/text_view_temperature"
+                                  tools:text="20 C"
+                                  android:textStyle="bold"
+                                  android:textSize="20dp"/>
+
+                    </LinearLayout>
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:id="@+id/text_view_clouds"
+                              tools:text="Clouds: 90%"
+                              android:textSize="15dp"/>
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:id="@+id/text_view_humidity"
+                              tools:text="Humidity: 86%"
+                              android:layout_margin="2dp"
+                              android:textSize="15dp"/>
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:id="@+id/text_view_wind"
+                              android:layout_margin="2dp"
+                              tools:text="Wind: 5 m/s"
+                              android:textSize="11dp"/>
+
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+            <TextView
+                    android:id="@+id/text_view_output"
+                    android:layout_width="match_parent"
+                    android:layout_margin="2dp"
+                    android:textColor="@color/colorAccent"
+                    android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+    </ScrollView>
+</android.support.v4.widget.SwipeRefreshLayout>

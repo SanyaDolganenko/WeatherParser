@@ -1,4 +1,4 @@
 package ua.weatherparser.data
 
 
-data class Wind(val speed: Int, val deg: Int)
+data class Wind(val speed: Float, val deg: Int)
