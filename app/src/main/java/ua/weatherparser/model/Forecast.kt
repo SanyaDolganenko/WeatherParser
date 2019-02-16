@@ -1,4 +1,4 @@
-package ua.weatherparser.data
+package ua.weatherparser.model
 
 
 data class Forecast(

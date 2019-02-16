@@ -8,7 +8,7 @@ import com.beust.klaxon.KlaxonException
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONObject
-import ua.weatherparser.data.Forecast
+import ua.weatherparser.model.Forecast
 
 class MainActivity : AppCompatActivity() {
     var weatherFetcher = WeatherFetcher()

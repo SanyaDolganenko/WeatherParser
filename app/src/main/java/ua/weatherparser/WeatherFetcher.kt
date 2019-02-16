@@ -12,9 +12,11 @@ class WeatherFetcher {
 
     private class FetchTask(val callback: FetchCallback, val city: String) : AsyncTask<Void, Void, JSONObject>() {
         override fun doInBackground(vararg params: Void?): JSONObject {
-//            val response = "http://api.openweathermap.org/data/2.5/weather?q=$city,uk&APPID=$API_KEY".httpGet()
             var response =
-                khttp.get("http://api.openweathermap.org/data/2.5/weather?q=$city&APPID=$API_KEY&units=metric")
+                khttp.get(
+                    url = "http://api.openweathermap.org/data/2.5/weather",
+                    params = mapOf("q" to city, "APPID" to API_KEY, "units" to "metric")
+                )
             return response.jsonObject
         }
 
